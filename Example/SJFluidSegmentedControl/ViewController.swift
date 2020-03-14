@@ -28,6 +28,10 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func reload(_ sender: Any) {
+        segmentedControl.reloadData()
+        segmentedControl.currentSegment = 0
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         segmentedControl(segmentedControl, didScrollWithXOffset: 0)

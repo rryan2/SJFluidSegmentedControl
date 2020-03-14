@@ -1440,7 +1440,7 @@ public class SJFluidSegmentedControl: UIView, UIGestureRecognizerDelegate {
             resetSegmentViewAtIndex(index)
             deselectSegmentAtIndex(index)
         }
-        selectSegmentAtIndex(currentSegment)
+        selectSegmentAtIndex(0)
     }
     
     
