@@ -307,7 +307,7 @@ public class SJFluidSegmentedControl: UIView, UIGestureRecognizerDelegate {
         $0.delegate = self
         $0.layer.masksToBounds = true
         self.addSubview($0)
-        self.bringSubviewToFront($0)
+        self.bringSubview(toFront: $0)
         return $0
     }(UIScrollView(frame: .zero))
     
@@ -1015,7 +1015,7 @@ public class SJFluidSegmentedControl: UIView, UIGestureRecognizerDelegate {
             let animation = CABasicAnimation(keyPath: "shadowOpacity")
             animation.duration = CFTimeInterval(isVisible ? shadowShowDuration : shadowHideDuration)
             animation.toValue = CFTimeInterval(isVisible ? 0.7 : 0.0)
-            animation.fillMode = CAMediaTimingFillMode.forwards
+            animation.fillMode = kCAFillModeForwards
             animation.isRemovedOnCompletion = false
             shadowView.layer.add(animation, forKey: nil)
         } else {
@@ -1455,9 +1455,9 @@ public class SJFluidSegmentedControl: UIView, UIGestureRecognizerDelegate {
         removeOldConstraints()
         reinstallViews()
         reinstallConstraints()
-        self.sendSubviewToBack(scrollView)
+        self.sendSubview(toBack: scrollView)
         if let gradientViewContainer = gradientViewContainer {
-            self.sendSubviewToBack(gradientViewContainer)
+            self.sendSubview(toBack: gradientViewContainer)
         }
         updateTransitionStyle()
         if didViewLayoutSubviews {
